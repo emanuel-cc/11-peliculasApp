@@ -11,7 +11,8 @@ import { VideoPipe } from './video.pipe';
     CommonModule
   ],
   exports: [
-    PosterPipe
+    PosterPipe,
+    VideoPipe
   ]
 })
 export class PipesModule { }

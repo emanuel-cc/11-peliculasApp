@@ -8,7 +8,7 @@
 <h1 class="mt-5">Películas</h1>
 <div class="row" *ngIf="movies.length == 0">
     <div class="col">
-        <h3>No hay información</h3>
+        <h3>Por favor espere</h3>
     </div>
 </div>
 <app-peliculas-poster-grid *ngIf="movies.length > 0" [peliculas]="movies"></app-peliculas-poster-grid>

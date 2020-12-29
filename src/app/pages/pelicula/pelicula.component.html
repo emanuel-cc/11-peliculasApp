@@ -50,6 +50,23 @@
         <app-cast-slideshow [cast]="cast"></app-cast-slideshow>
     </div>
 </div>
+<iframe *ngIf="movies.length > 0" width="100%" 
+    height="330" 
+    [src]="url | video"
+    frameborder="0" 
+    allow="accelerometer; 
+    autoplay; 
+    clipboard-write; 
+    encrypted-media; 
+    gyroscope; 
+    picture-in-picture" 
+    allowfullscreen>
+</iframe>
 
+<div *ngIf="movies.length == 0" class="row">
+    <div class="col">
+        <h4>Esta película no cuenta con video</h4>
+    </div>
+</div>
 
     

@@ -4,7 +4,7 @@ import { PeliculasService } from '../../services/peliculas.service';
 import { MovieDetails } from '../../interfaces/movie-response';
 import { Location } from '@angular/common';
 import { Cast } from '../../interfaces/credits-response';
-import { combineLatest } from 'rxjs/operators';
+// import { combineLatest } from 'rxjs/operators';
 import { MovieWatch, Result } from '../../interfaces/watch-video-response';
 
 @Component({
@@ -15,7 +15,8 @@ import { MovieWatch, Result } from '../../interfaces/watch-video-response';
 export class PeliculaComponent implements OnInit {
   public pelicula:MovieDetails;
   public cast:Cast[] = [];
-  public videosPelicula:Result[] = [];
+  public movies:Result[] = [];
+  public url:string;
 
   constructor(
     private activatedRoute:ActivatedRoute,
@@ -53,7 +54,10 @@ export class PeliculaComponent implements OnInit {
       .subscribe(videos=>{
         console.log("Videos: ");
         console.log(videos);
-        this.videosPelicula = videos;
+        this.movies = videos;
+        if(this.movies.length > 0){
+          this.url = this.movies[0].key;
+        }
       });
   }
 

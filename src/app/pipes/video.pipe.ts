@@ -9,16 +9,16 @@ export class VideoPipe implements PipeTransform {
   constructor(
     private _sanitizer: DomSanitizer
   ){}
-  transform(key: string): SafeResourceUrl {
-    var video, results;
+  transform(url: string): SafeResourceUrl {
+    // var video, results;
  
-    if (key === null) {
-        return '';
-    }
+    // if (key === null) {
+    //     return '';
+    // }
     // results = url.match('[\\?&]v=([^&#]*)');
     // video   = (results === null) ? url : results[1];
  
-    return this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + key);  
+    return this._sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${url}`);  
   }
 
 

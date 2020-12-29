@@ -36,3 +36,8 @@ hr{
 .block {
     display:block;
 }
+
+/* Agrega el enfoque de puntero cuando seleccionas un elemento */
+.puntero {
+    cursor: pointer;
+}
